@@ -1,7 +1,7 @@
-SOURCE_DIR="/app/mock-data"          
-BACKUP_DIR="/app/backup"            
-TIMESTAMP=$(date +"%Y%m%d_%H%M%S")   
-ARCHIVE_NAME="backup_$TIMESTAMP.tar.gz"
+export SOURCE_DIR="/app/mock-data"          
+export BACKUP_DIR="/app/backup"            
+export TIMESTAMP=$(date +"%Y%m%d_%H%M%S")   
+export ARCHIVE_NAME="backup_$TIMESTAMP.tar.gz"
 
 mkdir -p "$BACKUP_DIR"
 
