@@ -87,11 +87,12 @@ it will open a nano file where you can moddify the script and execute it .
 ## The recovery script
 The recovery script recovery_script.sh extracts the compressed files and restores them to their original location.
 In the script we have defined variables 
-`SOURCE_DIR="/app/mock-data"          
+```sh
+SOURCE_DIR="/app/mock-data"          
  BACKUP_DIR="/app/backup"            
  TIMESTAMP=$(date +"%Y%m%d_%H%M%S")   
  ARCHIVE_NAME="backup_$TIMESTAMP.tar.gz"
-`
+```
 This variables will define the format of our backup name and stores the original location of our mock files.
 `
  DIR=$(dirname $SOURCE_DIR)
