@@ -84,5 +84,25 @@ run the command
 ``crontab -e`` which will display command not found if ``nano`` is not installed 
 sso you can use the command ``apt-get install nano`` then try back the command .
 it will open a nano file where you can moddify the script and execute it .
+## The recovery script
+The recovery script recovery_script.sh extracts the compressed files and restores them to their original location.
+In the script we have defined variables 
+`SOURCE_DIR="/app/mock-data"          
+ BACKUP_DIR="/app/backup"            
+ TIMESTAMP=$(date +"%Y%m%d_%H%M%S")   
+ ARCHIVE_NAME="backup_$TIMESTAMP.tar.gz"
+`
+This variables will define the format of our backup name and stores the original location of our mock files.
+`
+ DIR=$(dirname $SOURCE_DIR)
+`
+The above dirname command passed with the $SOURCE_DIR variable outputs the original location of the mock files directory we compressed and the result is stored in the `DIR` variable.
+the `tar -xzf $BACKUP_DIR/$(ls $BACKUP_DIR) -C $DIR ` command extracts the backup;
+
+- -x:  Extract  files  from  an archive
+- -z:  Filter the archive through gzip
+- -f:  precise the name of the archive
+- -C   extract to the directory passed as argument
+
 
 
