@@ -7,4 +7,4 @@
 # defining the DIR variable that contains the original directory location of our mock data files
  DIR=$(dirname $SOURCE_DIR)
 
-tar -xzf $BACKUP_DIR/$ARCHIVE_NAME -C $DIR 
+tar -xzf $BACKUP_DIR/$(ls $BACKUP_DIR) -C $DIR 
