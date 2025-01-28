@@ -3,7 +3,7 @@ name: Notify Discord of a New Commit
 on:
   push:
     branches:
-      - master
+      - main
       
 
 jobs:
