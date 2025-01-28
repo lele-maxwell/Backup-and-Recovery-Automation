@@ -2,7 +2,7 @@
 Creating an automated backup and recovery system involves the following steps;
 
 1-**Setting-up a doker container**
-
+  
 - Ensure docker is installed in ur machine if not install docker using the command :
 ``sudo apt install docker`` or ``sudo snap  install docker`` 
 - Create a directory containing mock data files using the command : ``mkdir <mock-data>`` 
