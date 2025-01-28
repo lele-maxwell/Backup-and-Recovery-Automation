@@ -3,7 +3,7 @@ name: Notify Discord of a New Commit
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   REPO_OWNER: ${{ github.repository_owner }}
@@ -14,9 +14,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Send notification to Discord
-        uses: ${REPO_OWNER}/${REPO_NAME}/discord-action@master
+        uses: ${REPO_OWNER}/${REPO_NAME}/discord-action@main
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
