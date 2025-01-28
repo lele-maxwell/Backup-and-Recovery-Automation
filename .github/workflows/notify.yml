@@ -1,21 +1,18 @@
-name: Notify Discord of a New Commit
+name: Notify Discord of Commit
 
 on:
   push:
     branches:
       - main
-      
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
       - name: Send notification to Discord
-        uses: Ilshidur/discord-action@master
+        uses: appleboy/discord-action@master
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
           args: '**${{ github.actor }}** pushed [${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }}) to **${{ github.ref_name }}**'
-      
