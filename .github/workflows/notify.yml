@@ -3,8 +3,11 @@ name: Notify Discord of a New Commit
 on:
   push:
     branches:
-      - main
-      
+      - master
+
+env:
+  REPO_OWNER: ${{ github.repository_owner }}
+  REPO_NAME: ${{ github.repository }}
 
 jobs:
   build:
@@ -13,10 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Send notification to Discord
-        uses: ${{ github.repository_owner }}/${{ github.repository }}/discord-action@master
+        uses: ${REPO_OWNER}/${REPO_NAME}/discord-action@master
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          args: '**${{ github.actor }}** pushed [${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }}) to **${{ github.ref_name }}**'
-      
-      
+          args: '**${{ github.actor }}** pushed [${{ github.sha }}](https://github.com/${REPO_OWNER}/${REPO_NAME}/commit/${{ github.sha }}) to **${{ github.ref_name }}**'
