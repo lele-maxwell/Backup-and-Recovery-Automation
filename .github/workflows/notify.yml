@@ -1,4 +1,4 @@
-name: Notify Discord of Commit
+name:  Notify Discord of Commit
 
 on:
   push:
