@@ -1,3 +1,6 @@
+[![Notify Discord of Commit](https://github.com/lele-maxwell/Backup-and-Recovery-Automation/actions/workflows/notify.yml/badge.svg)](https://github.com/lele-maxwell/Backup-and-Recovery-Automation/actions/workflows/notify.yml)
+
+
 # Backup-and-Recovery-Automation.  
 Creating an automated backup and recovery system involves the following steps;
 
